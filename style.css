@@ -1,0 +1,41 @@
+img {
+    width: 50px;
+  }
+  
+  picture {
+    display: block;
+    height: 100px;
+    margin: 10px;
+  }
+  
+  picture img {
+    width: 100px;
+    position: absolute;
+  }
+  
+  picture > span {
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 10px;
+  }
+  
+  
+  ul {
+    list-style:none;
+    padding: 0;
+  }
+  
+  section :is(button, img) {
+    border-radius: 100%;
+  }
+  
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex li {
+    padding: 10px;
+    
+  }
+  
