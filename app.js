@@ -5,7 +5,7 @@ import {
   alimentaExtrato,
   povoaExtrato,
   escreveExtrato,
-} from "./business";
+} from "./business.js";
 
 export let wallet = 200;
 const COMIDA = 16;
@@ -37,11 +37,11 @@ onEvent("circo", "click", function () {
 
 onEvent("go-extrato", "click", function () {
   let tabela = '<table class="table"><tbody><tr>';
-  let cabecalho = `<tr><td>Saldo =</td><td> 200</td>`;
+  let cabecalho = `<tr><td>Saldo Inicial =</td><td> 200</td>`;
   let toBeTable = [];
   0;
 
   povoaExtrato(toBeTable, tabela);
-
+  console.log(extrato);
   escreveExtrato(cabecalho, toBeTable, wallet);
 });

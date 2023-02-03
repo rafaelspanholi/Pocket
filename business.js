@@ -1,5 +1,5 @@
-import { wallet, extrato } from "./app";
-import { setBackground } from "./lib/code.org";
+import { wallet, extrato } from "./app.js";
+import { setBackground, setContent } from "./lib/code.org.js";
 /**
  * Representa um gasto.
  * @typedef {Object} Gasto
@@ -24,9 +24,26 @@ export function alimentaExtrato(gasto, tipo) {
   extrato.push(operacao);
 }
 export function escreveExtrato(cabecalho, toBeTable, wallet) {
-  const conteudo = `${cabecalho} ${toBeTable.join(
-    ""
-  )} <tr><td>Restante = </td><td>${wallet}</td></tr>`;
+  const conteudo = `${cabecalho} ${toBeTable.join("")} 
+    <tr>
+      <td>Restante = </td>
+                        <td>${wallet}</td>
+                      </tr>`;
+
+  // <table border="1" cellpadding="3" id="printTable">
+  //   <tbody>
+  //     <tr>
+  //       <th>Tipo</th>
+  //       <th>Valor</th>
+  //       <th>Data</th>
+  //     </tr>
+  //     <tr>
+  //       <td>Jill</td>
+  //       <td>Smith</td>
+  //       <td>50</td>
+  //     </tr>
+  //   </tbody>
+  // </table>;
 
   setContent("extrato", conteudo);
 }
