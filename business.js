@@ -1,4 +1,4 @@
-import { updateScreen, warning } from "./gui.js";
+import { updateScreen, warning, updateBalanceDisplay } from "./gui.js";
 
 let balance = 200;
 
@@ -26,6 +26,7 @@ export function buyItem(itemName) {
 
 function updateBalance(value) {
   balance -= value;
+  updateBalanceDisplay(balance);
 }
 
 function addTransaction(transaction) {

@@ -1,5 +1,5 @@
 import { buyItem } from "./business.js";
-import { onEvent } from "./lib/code.org.js";
+import { onEvent, showElement } from "./lib/code.org.js";
 
 onEvent("comida", "click", function () {
   buyItem("comida");
@@ -14,9 +14,5 @@ onEvent("circo", "click", function () {
 });
 
 onEvent("go-extrato", "click", function () {
-  toBeTable = [];
-  listaCorpoExtrato = [];
-  checkFilter(extrato, toBeTable);
-  povoaExtrato(toBeTable);
-  escreveExtrato(listaCorpoExtrato, wallet);
+  showElement("extrato");
 });
