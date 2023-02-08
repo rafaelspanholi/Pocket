@@ -1,5 +1,6 @@
 import { buyItem } from "./business.js";
-import { onEvent, showElement } from "./lib/code.org.js";
+import { onEvent } from "./lib/code.org.js";
+import { extratoButton } from "./gui.js";
 
 onEvent("comida", "click", function () {
   buyItem("comida");
@@ -14,5 +15,5 @@ onEvent("circo", "click", function () {
 });
 
 onEvent("go-extrato", "click", function () {
-  showElement("extrato");
+  extratoButton();
 });
