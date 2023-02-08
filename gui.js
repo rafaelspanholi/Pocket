@@ -1,4 +1,9 @@
-import { hideElement, setBackground } from "./lib/code.org.js";
+import {
+  getProperty,
+  hideElement,
+  setBackground,
+  showElement,
+} from "./lib/code.org.js";
 import { setContent } from "./lib/code.org.js";
 
 hideElement("extrato");
@@ -15,7 +20,7 @@ export function updateScreen(transactions) {
         <tr>
         <td>${transaction.itemName}</td>
         <td>${transaction.itemValue}</td>
-        <td>${transaction.timestamp.toLocaleString()}</td>
+        <td>${transaction.timestamp.toLocaleString().substr(0, 10)}</td>
         </tr>`;
   });
 
@@ -34,6 +39,15 @@ export function updateScreen(transactions) {
   setContent("extrato", content);
 }
 
+export function extratoButton() {
+  let state = getProperty("extrato", "className");
+  const hidden = state.includes("hidden");
+  if (hidden) {
+    showElement("extrato");
+    return;
+  }
+  hideElement("extrato");
+}
 export function warning() {
   setBackground("red");
 }
