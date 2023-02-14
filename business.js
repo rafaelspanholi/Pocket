@@ -1,4 +1,9 @@
-import { updateScreen, warning, updateBalanceDisplay } from "./gui.js";
+import {
+  updateScreen,
+  warning,
+  updateBalanceDisplay,
+  checkCheckboxes,
+} from "./gui.js";
 
 let balance = 200;
 
@@ -21,6 +26,11 @@ export function buyItem(itemName) {
   updateBalance(transaction.itemValue);
   addTransaction(transaction);
   checkSpendings();
+  updateScreen(transactions);
+}
+
+export function setFilter(name, id) {
+  checkCheckboxes(name, id, transactions);
   updateScreen(transactions);
 }
 

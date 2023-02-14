@@ -1,6 +1,6 @@
 import { buyItem } from "./business.js";
 import { onEvent } from "./lib/code.org.js";
-import { extratoButton } from "./gui.js";
+import { checkCheckboxes as setFilters, extratoButton } from "./gui.js";
 
 onEvent("comida", "click", function () {
   buyItem("comida");
@@ -16,4 +16,20 @@ onEvent("circo", "click", function () {
 
 onEvent("go-extrato", "click", function () {
   extratoButton();
+});
+
+onEvent("dataInicial", "change", function () {});
+
+onEvent("dataFinal", "change", function () {});
+
+onEvent("filtroComida", "change", function () {
+  setFilters("comida", "filtroComida");
+});
+
+onEvent("filtroBrinquedo", "change", function () {
+  setFilters("brinquedo", "filtroBrinquedo");
+});
+
+onEvent("filtroCirco", "change", function () {
+  setFilters("circo", "filtroCirco");
 });
