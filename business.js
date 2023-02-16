@@ -29,8 +29,8 @@ export function buyItem(itemName) {
   updateScreen(transactions);
 }
 
-export function setFilter(name, id) {
-  checkCheckboxes(name, id, transactions);
+export function filterButton(name, id) {
+  checkCheckboxes(name, id);
   updateScreen(transactions);
 }
 

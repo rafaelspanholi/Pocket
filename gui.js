@@ -11,11 +11,6 @@ export function updateBalanceDisplay(newBalance) {
   setContent("carteira", newBalance);
 }
 
-// let checkboxes = [];
-// checkboxes.comida = getProperty("filtroComida", "checked");
-// checkboxes.circo = getProperty("filtroCirco", "checked");
-// checkboxes.brinquedo = getProperty("filtroBrinquedo", "checked");
-
 let filters = {
   comida: true,
   circo: true,
