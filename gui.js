@@ -3,8 +3,8 @@ import {
   hideElement,
   setBackground,
   showElement,
+  setContent,
 } from "./lib/code.org.js";
-import { setContent } from "./lib/code.org.js";
 
 hideElement("extrato");
 
@@ -12,15 +12,28 @@ export function updateBalanceDisplay(newBalance) {
   setContent("carteira", newBalance);
 }
 
+let filters = {
+  comida: true,
+  circo: true,
+  brinquedo: true,
+};
+
+export function checkCheckboxes(name, id) {
+  filters[name] = getProperty(id, "checked");
+}
+
 export function updateScreen(transactions) {
+  const filteredTransactions = transactions.filter((transaction) => {
+    return filters[transaction.itemName];
+  });
   let rows = ``;
 
-  transactions.forEach((transaction) => {
+  filteredTransactions.forEach((transaction) => {
     rows += `
         <tr>
         <td>${transaction.itemName}</td>
         <td>${transaction.itemValue}</td>
-        <td>${transaction.timestamp.toLocaleString().substr(0, 10)}</td>
+        <td>${transaction.timestamp.toLocaleString().substr(0, 16)}</td>
         </tr>`;
   });
 
