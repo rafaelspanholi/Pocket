@@ -5,6 +5,7 @@ import {
   showElement,
   setContent,
 } from "./lib/code.org.js";
+
 hideElement("extrato");
 
 export function updateBalanceDisplay(newBalance) {

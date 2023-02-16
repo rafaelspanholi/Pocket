@@ -35,4 +35,5 @@ onEvent("filtroBrinquedo", "change", function () {
 onEvent("filtroCirco", "change", function () {
   filterButton("circo", "filtroCirco");
   // setFilters("circo", "filtroCirco");
+
 });
